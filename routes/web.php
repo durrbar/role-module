@@ -14,6 +14,6 @@ use Modules\Role\Http\Controllers\RoleController;
 |
 */
 
-Route::group([], function () {
+Route::group([], function (): void {
     Route::resource('role', RoleController::class)->names('role');
 });
