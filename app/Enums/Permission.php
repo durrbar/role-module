@@ -9,4 +9,5 @@ enum Permission: string
     case SuperAdmin = 'super_admin';
     case StoreOwner = 'store_owner';
     case Staff = 'staff';
-    case Customer = 'customer';}
+    case Customer = 'customer';
+}
