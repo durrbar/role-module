@@ -7,14 +7,14 @@ if (! function_exists('Role')) {
 
     function Role(User $user): string
     {
-        if ($user->hasPermissionTo(Permission::SUPER_ADMIN)) {
-            return Permission::SUPER_ADMIN;
-        } elseif ($user->hasPermissionTo(Permission::STORE_OWNER) && ! $user->hasPermissionTo(Permission::SUPER_ADMIN)) {
-            return Permission::STORE_OWNER;
-        } elseif ($user->hasPermissionTo(Permission::STAFF)) {
-            return Permission::STAFF;
+        if ($user->hasPermissionTo(Permission::SuperAdmin->value)) {
+            return Permission::SuperAdmin->value;
+        } elseif ($user->hasPermissionTo(Permission::StoreOwner->value) && ! $user->hasPermissionTo(Permission::SuperAdmin->value)) {
+            return Permission::StoreOwner->value;
+        } elseif ($user->hasPermissionTo(Permission::Staff->value)) {
+            return Permission::Staff->value;
         } else {
-            return Permission::CUSTOMER;
+            return Permission::Customer->value;
         }
     }
 }

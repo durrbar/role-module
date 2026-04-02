@@ -1,19 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Modules\Role\Enums;
 
-use BenSampo\Enum\Enum;
-
-/**
- * Class RoleType
- */
-final class Role extends Enum
+enum Role: string
 {
-    public const SUPER_ADMIN = 'super_admin';
-
-    public const STORE_OWNER = 'store_owner';
-
-    public const STAFF = 'staff';
-
-    public const CUSTOMER = 'customer';
-}
+    case SuperAdmin = 'super_admin';
+    case StoreOwner = 'store_owner';
+    case Staff = 'staff';
+    case Customer = 'customer';}
